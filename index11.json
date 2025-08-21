@@ -1,0 +1,61 @@
+{
+  "matches": [
+    {
+      "id": "match_001",
+      "status": "قيد اللعب",
+      "competition": "الدوري الإنجليزي الممتاز",
+      "teams": {
+        "home": {
+          "name": "مانشستر يونايتد",
+          "score": 1
+        },
+        "away": {
+          "name": "ليفربول",
+          "score": 2
+        }
+      },
+      "details": {
+        "kickoff_time": "18:00",
+        "stadium": "أولد ترافورد"
+      }
+    },
+    {
+      "id": "match_002",
+      "status": "انتهت",
+      "competition": "دوري أبطال أوروبا",
+      "teams": {
+        "home": {
+          "name": "ريال مدريد",
+          "score": 3
+        },
+        "away": {
+          "name": "باريس سان جيرمان",
+          "score": 1
+        }
+      },
+      "details": {
+        "kickoff_time": "21:00",
+        "stadium": "سانتياغو برنابيو"
+      }
+    },
+    {
+      "id": "match_003",
+      "status": "لم تبدأ بعد",
+      "competition": "كأس العالم",
+      "teams": {
+        "home": {
+          "name": "البرازيل",
+          "score": null
+        },
+        "away": {
+          "name": "الأرجنتين",
+          "score": null
+        }
+      },
+      "details": {
+        "kickoff_time": "20:00",
+        "stadium": "استاد لوسيل"
+      }
+    }
+  ]
+}

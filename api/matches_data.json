@@ -1,0 +1,47 @@
+import requests
+import json
+import os
+
+def fetch_and_save_matches_data():
+    """
+    Fetches match data from the specified API and saves it to a JSON file.
+    """
+    # URL of the API endpoint
+    api_url = "https://super-fog-7140.bohmoh280.workers.dev/api/matches/"
+    
+    # Define the output filename
+    output_filename = "matches_data.json"
+    
+    try:
+        print(f"Fetching data from API: {api_url}")
+        
+        # Send an HTTP GET request to the API
+        response = requests.get(api_url)
+        
+        # Raise an exception if the request was not successful
+        response.raise_for_status() 
+
+        # Parse the JSON data from the response
+        matches_data = response.json()
+        
+        # Save the data to a local JSON file
+        # 'w' for write mode, 'encoding' for handling non-ASCII characters
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            # json.dump() writes the Python dictionary to a JSON file
+            # indent=4 makes the file human-readable
+            # ensure_ascii=False handles characters like Arabic correctly
+            json.dump(matches_data, f, ensure_ascii=False, indent=4)
+        
+        print(f"Data successfully saved to {output_filename}")
+        
+        return matches_data
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return None
+    except IOError as e:
+        print(f"Error saving file: {e}")
+        return None
+
+if __name__ == "__main__":
+    fetch_and_save_matches_data()
